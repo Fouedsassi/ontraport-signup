@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './PricingPage.css';
 
 const CheckIcon = () => (
@@ -186,7 +187,7 @@ function PricingPage() {
           </div>
           <div className="nav-right">
             <a href="#" className="nav-link">Log in</a>
-            <a href="/signup" className="nav-cta">Start free trial</a>
+            <Link to="/signup" className="nav-cta">Start free trial</Link>
           </div>
         </div>
       </nav>
@@ -200,7 +201,7 @@ function PricingPage() {
             Ontraport brings enterprise-grade CRM and automation software to small and mid-sized companies.
           </p>
 
-          <a href="/signup" className="hero-cta">Try for free</a>
+          <Link to="/signup" className="hero-cta">Try for free</Link>
 
           <p className="hero-sales-text">
             Don't see what you're looking for? Let's talk. <a href="#" className="hero-sales-link">Talk to sales</a>
@@ -418,10 +419,10 @@ function PricingPage() {
               </div>
 
               {/* CTA Button */}
-              <a href="/signup" className="sidebar-cta">
+              <Link to="/signup" className="sidebar-cta">
                 Start free trial
                 <span className="cta-subtext">No credit card required</span>
-              </a>
+              </Link>
 
               {/* Fine Print */}
               <p className="sidebar-fine-print">
@@ -890,7 +891,7 @@ function PricingPage() {
           <p className="final-cta-subtitle">
             Mistakes don't stick in 14-day free trial. No credit card. Valid for all plans.
           </p>
-          <a href="/signup" className="final-cta-button">Start free trial</a>
+          <Link to="/signup" className="final-cta-button">Start free trial</Link>
         </section>
 
         {/* FAQ Section */}
