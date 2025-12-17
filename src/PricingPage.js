@@ -24,64 +24,74 @@ const ChevronDownIcon = () => (
 function PricingPage() {
   const [billingCycle, setBillingCycle] = useState('annual');
   const [selectedPlan, setSelectedPlan] = useState('Plus');
-  const [contacts, setContacts] = useState(1000);
-  const [users, setUsers] = useState(3);
+  const [contacts, setContacts] = useState(500);
+  const [users, setUsers] = useState(1);
+  const [inbox, setInbox] = useState(false);
   const [dynamicCMS, setDynamicCMS] = useState(false);
   const [doneWithYou, setDoneWithYou] = useState(false);
 
-  // Contact slider values
-  const contactSteps = [250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 250000, 500000, 1000000, 2500000, 5000000];
-  const contactIndex = contactSteps.indexOf(contacts) !== -1 ? contactSteps.indexOf(contacts) : 2;
+  // Contact slider values - starting at 500
+  const contactSteps = [500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 250000, 500000, 1000000, 2500000, 5000000];
+  const contactIndex = contactSteps.indexOf(contacts) !== -1 ? contactSteps.indexOf(contacts) : 0;
 
-  // Calculate price based on selections
-  const basePrice = 70; // Starting price
-  const userPrice = 18;
+  // Pricing based on plan and billing cycle
+  const planPrices = {
+    Plus: { monthly: 99, yearly: 83 },
+    Pro: { monthly: 149, yearly: 124 },
+    Enterprise: { monthly: 299, yearly: 249 }
+  };
+
+  const userPrice = 49;
+  const currentPlanPrices = planPrices[selectedPlan];
+  const baseMonthlyPrice = billingCycle === 'annual' ? currentPlanPrices.yearly : currentPlanPrices.monthly;
   const additionalUsersCost = (users - 1) * userPrice;
-  const dynamicCMSPrice = dynamicCMS ? 25 : 0;
-  const monthlyPrice = basePrice + additionalUsersCost + dynamicCMSPrice;
-  const yearlyPrice = monthlyPrice * 12 * 0.82; // 18% discount
+  const monthlyPrice = baseMonthlyPrice + additionalUsersCost;
+  const yearlyTotal = monthlyPrice * 12;
+  const originalYearlyTotal = currentPlanPrices.monthly * 12 + additionalUsersCost * 12;
 
   const formatContactNumber = (num) => {
-    if (num >= 1000000) return (num / 1000000).toFixed(num % 1000000 === 0 ? 0 : 1) + 'M';
-    if (num >= 1000) return (num / 1000).toFixed(num % 1000 === 0 ? 0 : 1) + 'K';
-    return num.toString();
+    if (num >= 1000000) return 'Up to ' + (num / 1000000).toFixed(num % 1000000 === 0 ? 0 : 1) + 'M';
+    if (num >= 1000) return 'Up to ' + (num / 1000).toFixed(num % 1000 === 0 ? 0 : 1) + 'K';
+    return 'Up to ' + num.toString();
   };
 
   const plans = [
     {
       name: 'Plus',
-      price: 99,
-      tagline: 'Business automation essentials in one integrated platform.',
-      additionalUsers: '$19/mo (up to 10)',
+      monthlyPrice: 99,
+      yearlyPrice: 83,
+      tagline: 'CRM and automation essentials for growing teams',
       keyFeatures: [
         'CRM',
         'Marketing Automation',
-        'Payments',
-        'Sites + Membership',
-        'Advanced Personalization',
-        'Native AI'
+        'Email + SMS',
+        'Websites + Membership',
+        'Payment Management',
+        'Built-in AI'
       ],
     },
     {
       name: 'Pro',
-      price: 149,
-      tagline: 'Deep customization, marketing tracking, security and more.',
-      additionalUsers: '$49/mo',
+      monthlyPrice: 149,
+      yearlyPrice: 124,
+      tagline: 'Data insights and customization for next-level results',
       keyFeatures: [
-        'Everything in Plus',
-        'Deep customization',
-        'Marketing tracking & testing',
-        'Partner programs',
-        'User roles & permissions'
+        'Everything in Plus, AND',
+        'Marketing Tracking + Testing',
+        'Advanced Personalization',
+        'Deep Customization',
+        'User Permissions Management',
+        'Partner Programs',
+        'Shared Inbox + Webchat'
       ],
     },
     {
       name: 'Enterprise',
-      price: 299,
-      tagline: 'Unlimited everything. Enterprise grade security and scale.',
-      additionalUsers: '$69/mo',
+      monthlyPrice: 299,
+      yearlyPrice: 249,
+      tagline: 'Top-grade scalable infrastructure for established teams',
       keyFeatures: [
-        'Everything in Pro',
+        'Everything in Pro, AND',
         'SSO',
         'Field-level permissions',
         'Private infrastructure',
@@ -167,16 +177,11 @@ function PricingPage() {
           <div className="nav-left">
             <a href="/" className="nav-logo">ontraport</a>
             <div className="nav-links">
-              <a href="#" className="nav-link">
-                Products <ChevronDownIcon />
-              </a>
-              <a href="#" className="nav-link">
-                Solutions <ChevronDownIcon />
-              </a>
+              <a href="#" className="nav-link">Product</a>
+              <a href="#" className="nav-link">Who it's for</a>
               <a href="#" className="nav-link active">Pricing</a>
-              <a href="#" className="nav-link">
-                Resources <ChevronDownIcon />
-              </a>
+              <a href="#" className="nav-link">Resources</a>
+              <a href="#" className="nav-link">Contact us</a>
             </div>
           </div>
           <div className="nav-right">
@@ -190,9 +195,15 @@ function PricingPage() {
       <main className="pricing-main">
         {/* Hero Section */}
         <section className="pricing-hero">
-          <h1 className="pricing-title">Simple, transparent pricing</h1>
+          <h1 className="pricing-title">Try Ontraport free for 14 days</h1>
           <p className="pricing-subtitle">
-            Choose the plan that's right for your business. Start free for 14 days.
+            Ontraport brings enterprise-grade CRM and automation software to small and mid-sized companies.
+          </p>
+
+          <a href="#" className="hero-cta">Try for free</a>
+
+          <p className="hero-sales-text">
+            Don't see what you're looking for? Let's talk. <a href="#" className="hero-sales-link">Talk to sales</a>
           </p>
 
           {/* Billing Toggle */}
@@ -208,7 +219,7 @@ function PricingPage() {
               onClick={() => setBillingCycle('annual')}
             >
               Annual
-              <span className="billing-badge">Save 20%</span>
+              <span className="billing-badge">2 months free</span>
             </button>
           </div>
         </section>
@@ -234,12 +245,9 @@ function PricingPage() {
                     </div>
                     <div className="card-pricing">
                       <span className="price-currency">$</span>
-                      <span className="price-amount">{plan.price}</span>
-                      <span className="price-period">/mo</span>
+                      <span className="price-amount">{billingCycle === 'annual' ? plan.yearlyPrice : plan.monthlyPrice}</span>
+                      <span className="price-period"> per month</span>
                     </div>
-                    <p className="additional-users">
-                      Additional users: {plan.additionalUsers}
-                    </p>
                     <div className="key-features">
                       <h4>Key features include</h4>
                       <ul>
@@ -305,9 +313,10 @@ function PricingPage() {
                   value={contactIndex}
                   onChange={(e) => setContacts(contactSteps[parseInt(e.target.value)])}
                   className="sidebar-slider"
+                  style={{ '--slider-progress': `${(contactIndex / (contactSteps.length - 1)) * 100}%` }}
                 />
                 <div className="slider-labels">
-                  <span>250</span>
+                  <span>500</span>
                   <span>5,000,000</span>
                 </div>
               </div>
@@ -317,7 +326,7 @@ function PricingPage() {
                 <div className="sidebar-row">
                   <div>
                     <label className="sidebar-label">How many users?</label>
-                    <span className="sidebar-sublabel">${userPrice}/month per user</span>
+                    <span className="sidebar-sublabel">${userPrice} per month per user</span>
                   </div>
                   <span className="sidebar-value">{users}</span>
                 </div>
@@ -328,10 +337,30 @@ function PricingPage() {
                   value={users}
                   onChange={(e) => setUsers(parseInt(e.target.value))}
                   className="sidebar-slider"
+                  style={{ '--slider-progress': `${((users - 1) / 19) * 100}%` }}
                 />
                 <div className="slider-labels">
                   <span>1</span>
                   <span>Unlimited</span>
+                </div>
+              </div>
+
+              {/* Inbox Add-on */}
+              <div className="sidebar-section addon-section">
+                <div className="sidebar-row">
+                  <div>
+                    <label className="sidebar-label">Inbox</label>
+                    <a href="#" className="sidebar-link">See details</a>
+                  </div>
+                  <label className="toggle-switch">
+                    <span className="toggle-label">Add</span>
+                    <input
+                      type="checkbox"
+                      checked={inbox}
+                      onChange={(e) => setInbox(e.target.checked)}
+                    />
+                    <span className="toggle-slider"></span>
+                  </label>
                 </div>
               </div>
 
@@ -358,7 +387,7 @@ function PricingPage() {
               <div className="sidebar-section addon-section">
                 <div className="sidebar-row">
                   <div>
-                    <label className="sidebar-label">"Done-With-You"<br />Setup and Training</label>
+                    <label className="sidebar-label">"Done-with-you"<br />Setup and Training</label>
                   </div>
                   <label className="toggle-switch">
                     <span className="toggle-label">Add</span>
@@ -371,26 +400,7 @@ function PricingPage() {
                   </label>
                 </div>
                 <div className="addon-price">$897</div>
-                <p className="addon-note">100% money-back guarantee. Billed after your free trial. <a href="#" className="sidebar-link">See details</a></p>
-              </div>
-
-              {/* Yearly Billing Toggle */}
-              <div className="sidebar-section billing-section">
-                <div className="sidebar-row">
-                  <div>
-                    <span className="save-badge">SAVE 18%</span>
-                    <label className="sidebar-label">Billed yearly</label>
-                  </div>
-                  <label className="toggle-switch">
-                    <span className="toggle-label">Add</span>
-                    <input
-                      type="checkbox"
-                      checked={billingCycle === 'annual'}
-                      onChange={(e) => setBillingCycle(e.target.checked ? 'annual' : 'monthly')}
-                    />
-                    <span className="toggle-slider"></span>
-                  </label>
-                </div>
+                <p className="addon-note">One time fee, 30-day money back guarantee. <a href="#" className="sidebar-link">See details</a></p>
               </div>
 
               {/* Price Display */}
@@ -398,23 +408,25 @@ function PricingPage() {
                 <div className="total-price">
                   <span className="price-dollar">$</span>
                   <span className="price-number">{monthlyPrice}</span>
-                  <span className="price-term">/monthly</span>
+                  <span className="price-term"> per month</span>
                 </div>
                 {billingCycle === 'annual' && (
-                  <p className="billed-yearly">billed ${Math.round(yearlyPrice)}/yearly</p>
+                  <p className="billed-yearly">
+                    <span className="price-strikethrough">${originalYearlyTotal}</span> ${yearlyTotal} billed yearly
+                  </p>
                 )}
               </div>
 
               {/* CTA Button */}
               <button className="sidebar-cta">
                 Start free trial
-                <span className="cta-subtext">No credit card required.</span>
+                <span className="cta-subtext">No credit card required</span>
               </button>
 
               {/* Fine Print */}
               <p className="sidebar-fine-print">
-                Billed after your 14-day free trial.<br />
-                30-day money back guarantee.
+                Billed after your 14-day free trial<br />
+                30-day money back guarantee
               </p>
             </div>
           </aside>

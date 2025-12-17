@@ -17,10 +17,10 @@ Step 4: To try out cursor on your own projects, go to the file menu (top left) a
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SignupPage from './SignupPage';
+import PricingPage from './PricingPage';
 
 function App() {
-  return <SignupPage />;
+  return <PricingPage />;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
