@@ -875,6 +875,8 @@ html {
   align-items: center;
   gap: 4px;
   margin-top: 16px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .sidebar-cta:hover {
@@ -1058,4 +1060,3 @@ html {
     animation: none;
   }
 }
-

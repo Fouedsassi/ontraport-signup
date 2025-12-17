@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './SignupPage.css';
 import SignupStep1 from './SignupStep1';
 import SignupStep2 from './SignupStep2';
@@ -64,9 +65,9 @@ function SignupPage() {
       {/* Logo */}
       <header className="signup-header">
         <div className="logo">
-          <span className="logo-text" onClick={() => setCurrentStep(1)} style={{ cursor: 'pointer' }}>
+          <Link to="/" className="logo-text">
             ontraport
-          </span>
+          </Link>
         </div>
       </header>
 
