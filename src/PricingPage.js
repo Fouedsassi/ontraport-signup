@@ -186,7 +186,7 @@ function PricingPage() {
           </div>
           <div className="nav-right">
             <a href="#" className="nav-link">Log in</a>
-            <a href="#" className="nav-cta">Start free trial</a>
+            <a href="/signup" className="nav-cta">Start free trial</a>
           </div>
         </div>
       </nav>
@@ -200,7 +200,7 @@ function PricingPage() {
             Ontraport brings enterprise-grade CRM and automation software to small and mid-sized companies.
           </p>
 
-          <a href="#" className="hero-cta">Try for free</a>
+          <a href="/signup" className="hero-cta">Try for free</a>
 
           <p className="hero-sales-text">
             Don't see what you're looking for? Let's talk. <a href="#" className="hero-sales-link">Talk to sales</a>
@@ -418,10 +418,10 @@ function PricingPage() {
               </div>
 
               {/* CTA Button */}
-              <button className="sidebar-cta">
+              <a href="/signup" className="sidebar-cta">
                 Start free trial
                 <span className="cta-subtext">No credit card required</span>
-              </button>
+              </a>
 
               {/* Fine Print */}
               <p className="sidebar-fine-print">
@@ -432,29 +432,595 @@ function PricingPage() {
           </aside>
         </section>
 
-        {/* Trust Section */}
-        <section className="trust-section">
-          <p className="trust-text">Trusted by 100,000+ entrepreneurs and businesses worldwide</p>
+        {/* Inbox Section */}
+        <section className="addon-feature-section">
+          <div className="addon-feature-header">
+            <h2 className="addon-feature-title">Inbox</h2>
+            <p className="addon-feature-description">
+              Manage all of your customer communications from one place. <a href="#" className="inline-link">Learn more about Inbox</a>
+            </p>
+            <a href="#" className="addon-learn-link">✓ Included free with any plan</a>
+          </div>
+
+          <div className="addon-comparison-table">
+            <div className="addon-table-header">
+              <div className="addon-plan-col"></div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Basic</span>
+                <span className="addon-plan-price">Free with<br/>Ontraport</span>
+              </div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Plus</span>
+                <span className="addon-plan-price">$29 per<br/>month</span>
+              </div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Pro</span>
+                <span className="addon-plan-price">$59 per<br/>month</span>
+              </div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Enterprise</span>
+                <span className="addon-plan-price">$149 per<br/>month</span>
+              </div>
+            </div>
+
+            <div className="addon-table-body">
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Channels</span>
+                <span className="addon-feature-value">SMS + Email</span>
+                <span className="addon-feature-value">+ Live chat</span>
+                <span className="addon-feature-value">+ Webchat</span>
+                <span className="addon-feature-value">+ Webchat</span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Inbox users</span>
+                <span className="addon-feature-value">1 seat</span>
+                <span className="addon-feature-value">2 seats</span>
+                <span className="addon-feature-value">5 seats</span>
+                <span className="addon-feature-value">Unlimited</span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Unique conversations per month</span>
+                <span className="addon-feature-value">25</span>
+                <span className="addon-feature-value">250</span>
+                <span className="addon-feature-value">1,000</span>
+                <span className="addon-feature-value">Unlimited</span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">High priority email queue</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">AI message assist</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Custom routing and assignment rules</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Escalation conditions</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">SLA automation</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Round robin</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Dynamic CMS Section */}
+        <section className="addon-feature-section">
+          <div className="addon-feature-header">
+            <h2 className="addon-feature-title">Dynamic CMS</h2>
+            <p className="addon-feature-description">
+              Control your site and its functionality with your online database. <a href="#" className="inline-link">Learn more about CMS</a>
+            </p>
+            <a href="#" className="addon-learn-link">✓ Included free with any plan</a>
+          </div>
+
+          <div className="addon-comparison-table">
+            <div className="addon-table-header">
+              <div className="addon-plan-col"></div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Starter</span>
+                <span className="addon-plan-price">Free with<br/>Ontraport</span>
+              </div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Buildout</span>
+                <span className="addon-plan-price">$39 per<br/>month</span>
+              </div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Unlimited</span>
+                <span className="addon-plan-price">$69 per<br/>month</span>
+              </div>
+              <div className="addon-plan-col">
+                <span className="addon-plan-name">Enterprise</span>
+                <span className="addon-plan-price">$149 per<br/>month</span>
+              </div>
+            </div>
+
+            <div className="addon-table-body">
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Collections per site</span>
+                <span className="addon-feature-value">1</span>
+                <span className="addon-feature-value">10</span>
+                <span className="addon-feature-value">25</span>
+                <span className="addon-feature-value">Unlimited</span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Storage</span>
+                <span className="addon-feature-value">100 MB</span>
+                <span className="addon-feature-value">1 GB</span>
+                <span className="addon-feature-value">10 GB</span>
+                <span className="addon-feature-value">25 GB</span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Monthly pageviews</span>
+                <span className="addon-feature-value">1,000</span>
+                <span className="addon-feature-value">10,000</span>
+                <span className="addon-feature-value">100,000</span>
+                <span className="addon-feature-value">1,000,000</span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Custom objects</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Advanced page caching</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+              <div className="addon-feature-row">
+                <span className="addon-feature-name">Custom front-end code</span>
+                <span className="addon-feature-value">—</span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+                <span className="addon-feature-value"><CheckIcon /></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Done-With-You Setup Section */}
+        <section className="setup-promo-section">
+          <div className="setup-promo-content">
+            <div className="setup-promo-badge">New</div>
+            <h2 className="setup-promo-title">The fastest and easiest way to get started on the right track</h2>
+            <p className="setup-promo-description">
+              Add the Done-with-you Setup and Training Package and in only a few short weeks, your consultant will work alongside you to set up Ontraport for your unique business.
+            </p>
+            <p className="setup-promo-description">
+              Our 14+ years of experience with hundreds of different industries means you'll get best practice recommendations to make the most of Ontraport. Plus you'll walk away confident in using all the tools and running the day-to-day operations.
+            </p>
+            <div className="setup-promo-buttons">
+              <button className="setup-promo-cta">Add to plan</button>
+              <a href="#" className="setup-promo-link">Learn more</a>
+            </div>
+          </div>
+          <div className="setup-promo-image">
+            <div className="setup-promo-placeholder">
+              <div className="setup-consultant-icon">👩‍💼</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Extended Platform Features */}
+        <section className="platform-features-section">
+          <div className="platform-toggle">
+            <span className="platform-toggle-label">▾ Platform</span>
+          </div>
+
+          <div className="features-table-container platform-table">
+            <table className="features-table">
+              <thead>
+                <tr>
+                  <th className="feature-name-header"></th>
+                  <th className="plan-header plan-basic">Basic</th>
+                  <th className="plan-header">Plus</th>
+                  <th className="plan-header">Pro</th>
+                  <th className="plan-header">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* Data Management */}
+                <tr className="category-row">
+                  <td className="category-name" colSpan="5">Data management</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Card and contact records</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Deals and companies</td>
+                  <td className="feature-value">—</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Activity tracking</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Custom field types</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Custom lead scoring</td>
+                  <td className="feature-value">—</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Custom objects</td>
+                  <td className="feature-value">Requires Dynamic CMS</td>
+                  <td className="feature-value">Requires Dynamic CMS</td>
+                  <td className="feature-value">Requires Dynamic CMS</td>
+                  <td className="feature-value">Requires Dynamic CMS</td>
+                </tr>
+
+                {/* Automation */}
+                <tr className="category-row">
+                  <td className="category-name" colSpan="5">Automation</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Marketing automation</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Sales automation</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Postmaster + deliverability tools</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">SMS message campaigns</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+
+                {/* Tracking */}
+                <tr className="category-row">
+                  <td className="category-name" colSpan="5">Tracking</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Contact activity log</td>
+                  <td className="feature-value">14 days</td>
+                  <td className="feature-value">1 year</td>
+                  <td className="feature-value">4 years</td>
+                  <td className="feature-value">4+ years (custom)</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">UTM tracking and original source</td>
+                  <td className="feature-value">—</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">A/B testing</td>
+                  <td className="feature-value">—</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Lead attribution</td>
+                  <td className="feature-value">—</td>
+                  <td className="feature-value">—</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+
+                {/* More Features */}
+                <tr className="category-row">
+                  <td className="category-name" colSpan="5">File hosting</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Storage</td>
+                  <td className="feature-value">1 GB</td>
+                  <td className="feature-value">10 GB</td>
+                  <td className="feature-value">20 GB</td>
+                  <td className="feature-value">40+ GB</td>
+                </tr>
+
+                <tr className="category-row">
+                  <td className="category-name" colSpan="5">Task automation</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Manage tasks</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Assign and manage users</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+
+                <tr className="category-row">
+                  <td className="category-name" colSpan="5">Setup assistance</td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Self-guided onboarding</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Live training sessions</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+                <tr className="feature-row">
+                  <td className="feature-name">Built-in on-demand resources</td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                  <td className="feature-value"><CheckIcon /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Collapsible Categories */}
+          <div className="category-links">
+            <a href="#" className="category-link">▸ Payments</a>
+            <a href="#" className="category-link">▸ Sales and CRM</a>
+            <a href="#" className="category-link">▸ Marketing and automation</a>
+            <a href="#" className="category-link">▸ Websites and pages</a>
+            <a href="#" className="category-link">▸ Reporting</a>
+            <a href="#" className="category-link">▸ Support and onboarding</a>
+          </div>
+        </section>
+
+        {/* Talk to Sales Section */}
+        <section className="talk-sales-section">
+          <div className="talk-sales-content">
+            <div className="talk-sales-icon">
+              <span className="icon-emoji">💬</span>
+            </div>
+            <div className="talk-sales-text">
+              <h3>Don't see what you're looking for? Let's talk.</h3>
+            </div>
+            <a href="#" className="talk-sales-link">Let's connect →</a>
+          </div>
+        </section>
+
+        {/* Testimonial Section */}
+        <section className="testimonial-section">
+          <div className="testimonial-card">
+            <div className="testimonial-avatar">
+              <div className="avatar-placeholder">👩</div>
+            </div>
+            <blockquote className="testimonial-quote">
+              "The onboarding calls are a fantastic value for new users and I'm consistently blown away by the support team's professionalism and friendliness. I feel like I truly have a team working with me who is invested in my success."
+            </blockquote>
+            <cite className="testimonial-author">— JENNIFER EVERS, PRODUCTIVITY STRATEGIST</cite>
+          </div>
+        </section>
+
+        {/* Getting Started Section */}
+        <section className="getting-started-section">
+          <h2 className="getting-started-title">It's easy to get started with Ontraport</h2>
+          <p className="getting-started-subtitle">
+            Ontraport is the software you've been searching for to run the online side of your company. We'll help you get there.
+          </p>
+
+          <div className="getting-started-cards">
+            <div className="getting-started-card">
+              <div className="card-icon">📚</div>
+              <h3>Templates and resources</h3>
+              <p>Pick a Ready or Premium template to make building your business a breeze. Our templates come pre-built with automation, emails, pages and more.</p>
+            </div>
+            <div className="getting-started-card">
+              <div className="card-icon">💬</div>
+              <h3>Amazing support</h3>
+              <p>You'll never feel alone. Meet new friends who use Ontraport in our Facebook Group that's been praised as the most helpful community online.</p>
+            </div>
+            <div className="getting-started-card">
+              <div className="card-icon">🌟</div>
+              <h3>An inspiring community</h3>
+              <p>We offer dedicated customer success managers, webinars, and an extensive knowledge base so you're set up for success.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="final-cta-section">
+          <h2 className="final-cta-title">Start growing your business with Ontraport</h2>
+          <p className="final-cta-subtitle">
+            Mistakes don't stick in 14-day free trial. No credit card. Valid for all plans.
+          </p>
+          <a href="/signup" className="final-cta-button">Start free trial</a>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <h2 className="faq-title">Frequently Asked Questions</h2>
+
+          <div className="faq-grid">
+            <div className="faq-item">
+              <h4>How much does it cost to get started?</h4>
+              <p>Nothing! We offer a 14-day <a href="#">free trial</a>. There are no upfront fees or hidden charges. Your first payment won't be charged until after your trial ends.</p>
+            </div>
+            <div className="faq-item">
+              <h4>What if I want to upgrade to a different plan later?</h4>
+              <p>Sure! You can easily upgrade your paid level with more features, storage, or user licenses. Contact our team to change your plan.</p>
+            </div>
+            <div className="faq-item">
+              <h4>Do I have to commit to a long-term contract?</h4>
+              <p>While you receive a better rate by paying for an annual or two-year subscription, you're free to cancel anytime for any reason. Monthly plans only require 30-day notice.</p>
+            </div>
+            <div className="faq-item">
+              <h4>What if I need to cancel my account later?</h4>
+              <p>Your account can be put on pause or canceled at any time from inside your account. Simply give 30 days notice and you will be able to download all of your data.</p>
+            </div>
+            <div className="faq-item">
+              <h4>Is there support for getting my account set up right?</h4>
+              <p>Yes, we sell the Done-with-you Setup and Training and our Full Setup Package is designed for entrepreneurs who want help and training with building out their account.</p>
+            </div>
+            <div className="faq-item">
+              <h4>What if I need more customizable Ontraport plan to fit my team?</h4>
+              <p>To add SMS, the new required Inbox or custom domain please email <a href="mailto:billing@ontraport.com">billing@ontraport.com</a> and they're able to discuss options.</p>
+            </div>
+            <div className="faq-item">
+              <h4>I have more questions. How do I contact you?</h4>
+              <p>We provide multiple ways for you to connect with us. You can reach out via phone, email, or live chat. Find all contact info on our <a href="#">Contact page</a>.</p>
+            </div>
+          </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="pricing-footer">
-        <div className="footer-badges">
-          <span className="footer-badge">
-            <ShieldIcon />
-            PCI DSS Level 1
-          </span>
-          <span className="footer-badge">
-            <ShieldIcon />
-            Privacy Shield Certified
-          </span>
-        </div>
-        <div className="footer-links">
-          <a href="/terms">Terms & Conditions</a>
-          <a href="/legal">Legal</a>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/status">Service Status</a>
+      <footer className="pricing-footer-full">
+        <div className="footer-container">
+          <div className="footer-logo-section">
+            <a href="/" className="footer-logo">ontraport</a>
+          </div>
+          
+          <div className="footer-links-grid">
+            <div className="footer-column">
+              <h4>Sales + CRM</h4>
+              <a href="#">Segment and score</a>
+              <a href="#">Self-scheduling and calendar automation</a>
+              <a href="#">Lead tracking + routing</a>
+              <a href="#">Lead management</a>
+              <a href="#">Pipelines</a>
+            </div>
+            <div className="footer-column">
+              <h4>Payments</h4>
+              <a href="#">Order forms</a>
+              <a href="#">Subscriptions</a>
+              <a href="#">Invoicing</a>
+            </div>
+            <div className="footer-column">
+              <h4>Marketing automation</h4>
+              <a href="#">Campaign automation</a>
+              <a href="#">Drip automation</a>
+              <a href="#">Tracking + fulfillment</a>
+            </div>
+            <div className="footer-column">
+              <h4>CMS</h4>
+              <a href="#">Page generator</a>
+              <a href="#">Quick styles</a>
+              <a href="#">Site builder</a>
+              <a href="#">Forms</a>
+              <a href="#">Membership templates</a>
+              <a href="#">API</a>
+            </div>
+            <div className="footer-column">
+              <h4>Support</h4>
+              <a href="#">Support calls</a>
+              <a href="#">Done with you</a>
+              <a href="#">Knowledgebase</a>
+            </div>
+          </div>
+
+          <div className="footer-bottom">
+            <div className="footer-secondary-links">
+              <div className="footer-link-group">
+                <h5>Company</h5>
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookie settings</a>
+                <a href="#">Careers</a>
+              </div>
+              <div className="footer-link-group">
+                <h5>Resources</h5>
+                <a href="#">Blog</a>
+                <a href="#">Certification issued</a>
+                <a href="#">State of the market</a>
+                <a href="#">All resources</a>
+              </div>
+              <div className="footer-link-group">
+                <h5>Partners</h5>
+                <a href="#">Experts</a>
+                <a href="#">Developers</a>
+              </div>
+              <div className="footer-link-group">
+                <h5>More</h5>
+                <a href="#">Webinars</a>
+              </div>
+            </div>
+
+            <div className="footer-badges-legal">
+              <div className="footer-badges">
+                <span className="footer-badge">
+                  <ShieldIcon />
+                  PCI DSS Level 1
+                </span>
+                <span className="footer-badge">
+                  <ShieldIcon />
+                  Privacy Shield Certified
+                </span>
+              </div>
+              <div className="footer-legal">
+                <span>© Ontraport 2025</span>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
