@@ -68,6 +68,7 @@ function SignupStep5({ onSubmit }) {
   const [formData, setFormData] = useState({
     businessName: '',
     website: '',
+    phone: '',
     country: ''
   });
 
@@ -112,6 +113,19 @@ function SignupStep5({ onSubmit }) {
             onChange={handleChange}
             className="form-input"
             autoComplete="url"
+          />
+        </div>
+
+        {/* Phone/SMS */}
+        <div className="form-field">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            className="form-input"
+            autoComplete="tel"
           />
         </div>
 
